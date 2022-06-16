@@ -217,7 +217,7 @@ Public Class ChangeLink
                                                  sKeyComJobPath, CommonJobFilePath_Combobox, MagicTool.FileChoUse_ComboBox, nSize, sinifilename)
 
             '當FileChoUse_Combobox的text為某資料夾時，顯示該資料夾底下的檔案
-            MagicTool.FileChoUse_ComboBox.Text = MagicTool.FileChoUse_ComboBox.Items(0).ToString
+            'MagicTool.FileChoUse_ComboBox.Text = MagicTool.FileChoUse_ComboBox.Items(0).ToString
 
 
             Dim MA_ChildFolder_Group As TextBox() = {MagicTool.MAchildFolder_TextBox1, MagicTool.MAchildFolder_TextBox2,
@@ -737,30 +737,29 @@ Public Class ChangeLink
     ''' </summary>
     Private Sub auto_open_program()
         Dim temp As Microsoft.Win32.RegistryKey
-        If autoProgram_CheckBox.Checked = True Then
-            WriteInini_Fun(sKeyValueCB_State, CStr(True),
-                           ChangeLink_BasicString.setTitle_CheckBox_State,
-                           ChangeLink_BasicString.setCont_autoProgram)
-            '開機時開啟檔案寫入登入檔
-            My.Computer.Registry.SetValue("HKEY_LOCAL_MACHINE\SoftWare\Microsoft\Windows\CurrentVersion\Run",
+        Try
+            If autoProgram_CheckBox.Checked = True Then
+                WriteInini_Fun(sKeyValueCB_State, CStr(True),
+                       ChangeLink_BasicString.setTitle_CheckBox_State,
+                       ChangeLink_BasicString.setCont_autoProgram)
+                '開機時開啟檔案寫入登入檔
+                My.Computer.Registry.SetValue("HKEY_LOCAL_MACHINE\SoftWare\Microsoft\Windows\CurrentVersion\Run",
                                           "Run_MyExe_ByAuto",
                                           $"{Application.StartupPath}\{Application.ProductName}")
-            temp = My.Computer.Registry.LocalMachine.OpenSubKey("software").
+                temp = My.Computer.Registry.LocalMachine.OpenSubKey("software").
                 OpenSubKey("microsoft").OpenSubKey("windows").OpenSubKey("currentversion").OpenSubKey("run", True)
-        Else
-            '刪除登錄檔
-            Try
+            Else
+                '刪除登錄檔
                 WriteInini_Fun(sKeyValueCB_State, CStr(False),
                                ChangeLink_BasicString.setTitle_CheckBox_State,
                                ChangeLink_BasicString.setCont_autoProgram)
                 temp = My.Computer.Registry.LocalMachine.OpenSubKey("software").
                     OpenSubKey("microsoft").OpenSubKey("windows").OpenSubKey("currentversion").OpenSubKey("run", True)
                 temp.DeleteValue("Run_MyExe_ByAuto", True)
-            Catch ex As Exception
-                'MsgBox("目前沒有目標登錄檔可刪除")
-            End Try
-        End If
-
+            End If
+        Catch ex As Exception
+            MsgBox($"登路自動登登陸檔案時發生錯誤:{vbCrLf}{ex.Message}{vbCrLf}")
+        End Try
     End Sub
 
 
@@ -1283,6 +1282,8 @@ Public Class ChangeLink
                    Link5_1_Name_TextBox, Link5_1_Dir_TextBox,
                    Link5_1_OpenFile_Button, False)
     End Sub
+
+
     Private Sub Link5_2_CheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles Link5_2_CheckBox.CheckedChanged
         IfCB_Click(Link5_2_CheckBox, MagicTool.Link5_2_Button,
                    Link5_2_Name_TextBox, Link5_2_Dir_TextBox,

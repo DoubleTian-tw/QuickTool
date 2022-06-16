@@ -138,16 +138,12 @@
     <Compile Include="About_MainProgram\About.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="About_Specfication\AutoLoad_inJobMaker.vb" />
     <Compile Include="About_LinkProgram\ChangeLink_BasicString.vb" />
     <Compile Include="About_LinkProgram\CheckNewVersion.vb" />
-    <Compile Include="About_Specfication\DynamicControlName.vb" />
-    <Compile Include="About_Specfication\errorInfo.vb" />
-    <Compile Include="About_Specfication\getMathOnExcel.vb" />
-    <Compile Include="About_Specfication\JobMaker.Designer.vb">
-      <DependentUpon>JobMaker.vb</DependentUpon>
+    <Compile Include="About_MainProgram\CopyFile.Designer.vb">
+      <DependentUpon>CopyFile.vb</DependentUpon>
     </Compile>
-    <Compile Include="About_Specfication\JobMaker.vb">
+    <Compile Include="About_MainProgram\CopyFile.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="About_MainProgram\MagicTool.vb">
@@ -163,13 +159,6 @@
     <Compile Include="About_LinkProgram\ChangeLink.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="About_Specfication\LoadStored_ProgressBar.Designer.vb">
-      <DependentUpon>LoadStored_ProgressBar.vb</DependentUpon>
-    </Compile>
-    <Compile Include="About_Specfication\LoadStored_ProgressBar.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="About_Specfication\replaceControllerName.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -185,13 +174,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="About_Specfication\Output_ToSpec.vb" />
     <Compile Include="ProgramAllName.vb" />
     <Compile Include="ProgramAllPath.vb" />
     <Compile Include="About_LinkProgram\controlStateOnChangeLink.vb" />
-    <Compile Include="About_Specfication\Spec_Item.vb" />
-    <Compile Include="About_Specfication\Spec_NameManager.vb" />
-    <Compile Include="About_Specfication\Spec_StoredJobData.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="About_MainProgram\About.resx">
@@ -200,15 +185,12 @@
     <EmbeddedResource Include="About_LinkProgram\ChangeLink.resx">
       <DependentUpon>ChangeLink.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="About_Specfication\JobMaker.resx">
-      <DependentUpon>JobMaker.vb</DependentUpon>
+    <EmbeddedResource Include="About_MainProgram\CopyFile.resx">
+      <DependentUpon>CopyFile.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="About_MainProgram\MagicTool.resx">
       <DependentUpon>MagicTool.vb</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="About_Specfication\LoadStored_ProgressBar.resx">
-      <DependentUpon>LoadStored_ProgressBar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

@@ -24,6 +24,9 @@ Partial Class MagicTool
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MagicTool))
+        Me.JustForFun_SplitContainer = New System.Windows.Forms.SplitContainer()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.MagicTool_TabControl = New System.Windows.Forms.TabControl()
         Me.Link_TabPage = New System.Windows.Forms.TabPage()
         Me.Links_Group = New System.Windows.Forms.GroupBox()
@@ -130,13 +133,8 @@ Partial Class MagicTool
         Me.FileChoose_Button = New System.Windows.Forms.Button()
         Me.FileUse_CheckedListBox = New System.Windows.Forms.CheckedListBox()
         Me.FileChoose_CheckedListBox = New System.Windows.Forms.CheckedListBox()
-        Me.Spec_TabPage = New System.Windows.Forms.TabPage()
-        Me.JobMaker_Button = New System.Windows.Forms.Button()
         Me.Test_TabPage = New System.Windows.Forms.TabPage()
         Me.Update_Button = New System.Windows.Forms.Button()
-        Me.JustForFun_SplitContainer = New System.Windows.Forms.SplitContainer()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.MagicToll_MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.Setting_ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BackOriPos_ToolStrip = New System.Windows.Forms.ToolStripMenuItem()
@@ -152,6 +150,15 @@ Partial Class MagicTool
         Me.MagicTool_NotifyIcon = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.MagicTool_Timer = New System.Windows.Forms.Timer(Me.components)
         Me.JustForFun_ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.CopyFile_TabPage = New System.Windows.Forms.TabPage()
+        Me.CheckedListBox1 = New System.Windows.Forms.CheckedListBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.CopyFileForm_Button = New System.Windows.Forms.Button()
+        CType(Me.JustForFun_SplitContainer, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.JustForFun_SplitContainer.Panel1.SuspendLayout()
+        Me.JustForFun_SplitContainer.Panel2.SuspendLayout()
+        Me.JustForFun_SplitContainer.SuspendLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MagicTool_TabControl.SuspendLayout()
         Me.Link_TabPage.SuspendLayout()
         Me.Links_Group.SuspendLayout()
@@ -186,22 +193,47 @@ Partial Class MagicTool
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.TabPage4.SuspendLayout()
-        Me.Spec_TabPage.SuspendLayout()
         Me.Test_TabPage.SuspendLayout()
-        CType(Me.JustForFun_SplitContainer, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.JustForFun_SplitContainer.Panel1.SuspendLayout()
-        Me.JustForFun_SplitContainer.Panel2.SuspendLayout()
-        Me.JustForFun_SplitContainer.SuspendLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MagicToll_MenuStrip.SuspendLayout()
+        Me.CopyFile_TabPage.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'JustForFun_SplitContainer
+        '
+        Me.JustForFun_SplitContainer.BackColor = System.Drawing.Color.White
+        resources.ApplyResources(Me.JustForFun_SplitContainer, "JustForFun_SplitContainer")
+        Me.JustForFun_SplitContainer.Name = "JustForFun_SplitContainer"
+        '
+        'JustForFun_SplitContainer.Panel1
+        '
+        Me.JustForFun_SplitContainer.Panel1.Controls.Add(Me.PictureBox4)
+        '
+        'JustForFun_SplitContainer.Panel2
+        '
+        Me.JustForFun_SplitContainer.Panel2.BackColor = System.Drawing.Color.White
+        resources.ApplyResources(Me.JustForFun_SplitContainer.Panel2, "JustForFun_SplitContainer.Panel2")
+        Me.JustForFun_SplitContainer.Panel2.Controls.Add(Me.Label3)
+        Me.JustForFun_ToolTip.SetToolTip(Me.JustForFun_SplitContainer.Panel2, resources.GetString("JustForFun_SplitContainer.Panel2.ToolTip"))
+        Me.JustForFun_ToolTip.SetToolTip(Me.JustForFun_SplitContainer, resources.GetString("JustForFun_SplitContainer.ToolTip"))
+        '
+        'PictureBox4
+        '
+        resources.ApplyResources(Me.PictureBox4, "PictureBox4")
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.TabStop = False
+        '
+        'Label3
+        '
+        resources.ApplyResources(Me.Label3, "Label3")
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label3.Name = "Label3"
         '
         'MagicTool_TabControl
         '
         Me.MagicTool_TabControl.Controls.Add(Me.Link_TabPage)
         Me.MagicTool_TabControl.Controls.Add(Me.Calendar_TabPage)
         Me.MagicTool_TabControl.Controls.Add(Me.Creater_TabPage)
-        Me.MagicTool_TabControl.Controls.Add(Me.Spec_TabPage)
+        Me.MagicTool_TabControl.Controls.Add(Me.CopyFile_TabPage)
         Me.MagicTool_TabControl.Controls.Add(Me.Test_TabPage)
         resources.ApplyResources(Me.MagicTool_TabControl, "MagicTool_TabControl")
         Me.MagicTool_TabControl.Name = "MagicTool_TabControl"
@@ -974,20 +1006,6 @@ Partial Class MagicTool
         resources.ApplyResources(Me.FileChoose_CheckedListBox, "FileChoose_CheckedListBox")
         Me.FileChoose_CheckedListBox.Name = "FileChoose_CheckedListBox"
         '
-        'Spec_TabPage
-        '
-        resources.ApplyResources(Me.Spec_TabPage, "Spec_TabPage")
-        Me.Spec_TabPage.Controls.Add(Me.JobMaker_Button)
-        Me.Spec_TabPage.Name = "Spec_TabPage"
-        Me.Spec_TabPage.UseVisualStyleBackColor = True
-        '
-        'JobMaker_Button
-        '
-        resources.ApplyResources(Me.JobMaker_Button, "JobMaker_Button")
-        Me.JobMaker_Button.ForeColor = System.Drawing.Color.Black
-        Me.JobMaker_Button.Name = "JobMaker_Button"
-        Me.JobMaker_Button.UseVisualStyleBackColor = True
-        '
         'Test_TabPage
         '
         Me.Test_TabPage.Controls.Add(Me.Update_Button)
@@ -1001,36 +1019,6 @@ Partial Class MagicTool
         resources.ApplyResources(Me.Update_Button, "Update_Button")
         Me.Update_Button.Name = "Update_Button"
         Me.Update_Button.UseVisualStyleBackColor = True
-        '
-        'JustForFun_SplitContainer
-        '
-        Me.JustForFun_SplitContainer.BackColor = System.Drawing.Color.White
-        resources.ApplyResources(Me.JustForFun_SplitContainer, "JustForFun_SplitContainer")
-        Me.JustForFun_SplitContainer.Name = "JustForFun_SplitContainer"
-        '
-        'JustForFun_SplitContainer.Panel1
-        '
-        Me.JustForFun_SplitContainer.Panel1.Controls.Add(Me.PictureBox4)
-        '
-        'JustForFun_SplitContainer.Panel2
-        '
-        Me.JustForFun_SplitContainer.Panel2.BackColor = System.Drawing.Color.White
-        resources.ApplyResources(Me.JustForFun_SplitContainer.Panel2, "JustForFun_SplitContainer.Panel2")
-        Me.JustForFun_SplitContainer.Panel2.Controls.Add(Me.Label3)
-        Me.JustForFun_ToolTip.SetToolTip(Me.JustForFun_SplitContainer.Panel2, resources.GetString("JustForFun_SplitContainer.Panel2.ToolTip"))
-        Me.JustForFun_ToolTip.SetToolTip(Me.JustForFun_SplitContainer, resources.GetString("JustForFun_SplitContainer.ToolTip"))
-        '
-        'PictureBox4
-        '
-        resources.ApplyResources(Me.PictureBox4, "PictureBox4")
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.TabStop = False
-        '
-        'Label3
-        '
-        resources.ApplyResources(Me.Label3, "Label3")
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label3.Name = "Label3"
         '
         'MagicToll_MenuStrip
         '
@@ -1113,6 +1101,32 @@ Partial Class MagicTool
         Me.JustForFun_ToolTip.InitialDelay = 300
         Me.JustForFun_ToolTip.ReshowDelay = 100
         '
+        'CopyFile_TabPage
+        '
+        Me.CopyFile_TabPage.Controls.Add(Me.CopyFileForm_Button)
+        Me.CopyFile_TabPage.Controls.Add(Me.TextBox1)
+        Me.CopyFile_TabPage.Controls.Add(Me.CheckedListBox1)
+        resources.ApplyResources(Me.CopyFile_TabPage, "CopyFile_TabPage")
+        Me.CopyFile_TabPage.Name = "CopyFile_TabPage"
+        Me.CopyFile_TabPage.UseVisualStyleBackColor = True
+        '
+        'CheckedListBox1
+        '
+        Me.CheckedListBox1.FormattingEnabled = True
+        resources.ApplyResources(Me.CheckedListBox1, "CheckedListBox1")
+        Me.CheckedListBox1.Name = "CheckedListBox1"
+        '
+        'TextBox1
+        '
+        resources.ApplyResources(Me.TextBox1, "TextBox1")
+        Me.TextBox1.Name = "TextBox1"
+        '
+        'CopyFileForm_Button
+        '
+        resources.ApplyResources(Me.CopyFileForm_Button, "CopyFileForm_Button")
+        Me.CopyFileForm_Button.Name = "CopyFileForm_Button"
+        Me.CopyFileForm_Button.UseVisualStyleBackColor = True
+        '
         'MagicTool
         '
         resources.ApplyResources(Me, "$this")
@@ -1123,6 +1137,12 @@ Partial Class MagicTool
         Me.MaximizeBox = False
         Me.Name = "MagicTool"
         Me.JustForFun_ToolTip.SetToolTip(Me, resources.GetString("$this.ToolTip"))
+        Me.JustForFun_SplitContainer.Panel1.ResumeLayout(False)
+        Me.JustForFun_SplitContainer.Panel2.ResumeLayout(False)
+        Me.JustForFun_SplitContainer.Panel2.PerformLayout()
+        CType(Me.JustForFun_SplitContainer, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.JustForFun_SplitContainer.ResumeLayout(False)
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MagicTool_TabControl.ResumeLayout(False)
         Me.Link_TabPage.ResumeLayout(False)
         Me.Links_Group.ResumeLayout(False)
@@ -1162,16 +1182,11 @@ Partial Class MagicTool
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
-        Me.Spec_TabPage.ResumeLayout(False)
         Me.Test_TabPage.ResumeLayout(False)
-        Me.JustForFun_SplitContainer.Panel1.ResumeLayout(False)
-        Me.JustForFun_SplitContainer.Panel2.ResumeLayout(False)
-        Me.JustForFun_SplitContainer.Panel2.PerformLayout()
-        CType(Me.JustForFun_SplitContainer, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.JustForFun_SplitContainer.ResumeLayout(False)
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MagicToll_MenuStrip.ResumeLayout(False)
         Me.MagicToll_MenuStrip.PerformLayout()
+        Me.CopyFile_TabPage.ResumeLayout(False)
+        Me.CopyFile_TabPage.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1300,10 +1315,12 @@ Partial Class MagicTool
     Friend WithEvents FileChoUse_ComboBox As ComboBox
     Friend WithEvents FileChoUse_Button As Button
     Friend WithEvents childAllFolder_ComboBox As ComboBox
-    Friend WithEvents Spec_TabPage As TabPage
-    Friend WithEvents JobMaker_Button As Button
     Friend WithEvents CleanAll_Button As Button
     Friend WithEvents Update_Button As Button
+    Friend WithEvents CopyFile_TabPage As TabPage
+    Friend WithEvents CopyFileForm_Button As Button
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents CheckedListBox1 As CheckedListBox
 End Class
 
 

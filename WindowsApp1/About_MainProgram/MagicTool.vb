@@ -155,8 +155,8 @@ Public Class MagicTool
             Catch ex As Exception
                 Me.Text = $"{thisApp_fullName}更新失敗"
                 MsgBox($"找不到檔案{vbCrLf}{ex.Message}", MsgBoxStyle.Critical, "錯誤")
-                writeTitleIntoError_InfoTxt($"check_File_Version")
-                writeInfoError_InfoTxt($"找不到檔案{vbCrLf}{ex.Message}")
+                'writeTitleIntoError_InfoTxt($"check_File_Version")
+                'writeInfoError_InfoTxt($"找不到檔案{vbCrLf}{ex.Message}")
                 Exit Sub
             End Try
 
@@ -193,8 +193,8 @@ Public Class MagicTool
         Catch ex As Exception
             Me.Text = $"{thisApp_fullName}更新失敗"
             MsgBox($"更新失敗{vbCrLf}{ex.Message}", MsgBoxStyle.Critical, "錯誤")
-            writeTitleIntoError_InfoTxt($"check_File_Version")
-            writeInfoError_InfoTxt($"更新失敗{vbCrLf}{ex.Message}")
+            'writeTitleIntoError_InfoTxt($"check_File_Version")
+            'writeInfoError_InfoTxt($"更新失敗{vbCrLf}{ex.Message}")
         End Try
     End Sub
 
@@ -659,10 +659,6 @@ Public Class MagicTool
 
     End Sub
 
-    Private Sub JobMaker_Button_Click(sender As Object, e As EventArgs) Handles JobMaker_Button.Click
-        JobMaker_Form.Show()
-    End Sub
-
     Private Sub CleanAll_Button_Click(sender As Object, e As EventArgs) Handles CleanAll_Button.Click
         '按此按鈕可清除所有<創建資料夾>的表格內容
         FolderPath_ComboBox.Text = ""
@@ -757,6 +753,9 @@ Public Class MagicTool
         End If
     End Sub
 
+    Private Sub CopyFileForm_Button_Click(sender As Object, e As EventArgs) Handles CopyFileForm_Button.Click
+
+    End Sub
 
     Private Sub linkBtnUI_state(btn As Button)
         btn.FlatStyle = Windows.Forms.FlatStyle.Flat
